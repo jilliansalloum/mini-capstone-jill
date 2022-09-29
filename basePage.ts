@@ -1,4 +1,3 @@
-
 import {Builder, By, Capabilities, until, WebDriver, WebElement} from 'selenium-webdriver'
 const chromedriver = require('chromedriver')
 

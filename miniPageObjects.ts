@@ -1,29 +1,26 @@
 import {BasePage} from './basePage'
-import {
-    Builder,
-    By,
-    Capabilities,
-    until,
-    WebDriver,
-    WebElement,
-  } from "selenium-webdriver";
+import {By} from 'selenium-webdriver'
   
   // this is standard "boilerplate" code.
-  const driver: WebDriver = new Builder()
-    .withCapabilities(Capabilities.chrome())
-    .build();
-
 
 export class Clicker extends BasePage {
 //Locators Here
-    url: string = 'https://orteil.dashnet.org/cookieclicker/'
-    cookieButton: By = By.id('bigCookie')
+oatmealRaisinClicker: By = By.xpath('//a[@class="cc_btn cc_btn_accept_all"]')
+cursorPhoto: By = By.xpath('//div[@class="product unlocked enabled"]')
+englishBtn: By = By.xpath('//div[@id="langSelect-EN"]')
+fingerUp: By = By.xpath('//div[@id="upgrade0"]')
+cookieButton: By = By.css('#bigCookie')
+wakeBake: By = By.xpath('//div[@id="note-2"]')
+closeWB: By = By.xpath('//div[@class="close"][1]')
+optionsBtn: By = By.xpath('//div[@class="subButton"]')
+changeLang: By = By.xpath('//a[@id="changeLanguageOption"]')
 constructor() {
 super({url: 'https://orteil.dashnet.org/cookieclicker/'})
 }
 //methods
-async clickCookie() {
-    await this.driver.get(this.url)
-    await this.driver.wait(until.elementLocated(this.cookieButton))
+async clickCookie(num, clickThing ) {
+    for (let i = 0; i < num; i++ ){
+        await this.click(this.cookieButton)
+    }   
 }
 }
